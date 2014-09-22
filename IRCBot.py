@@ -38,9 +38,6 @@ class ircbot():
 			This is the main application loop
 		"""
 
-		#print the start time
-		start = time.strftime("%d %b %Y  %H:%M %p")
-		print("Start time: %s" % start)
 		#create a variable to dump log information into
 		readbuffer = ""
 
@@ -62,12 +59,13 @@ class ircbot():
 				if (linex[0] == "PING"):
 					self.irc.send(bytes("PONG %s\r\n" % linex[1]))
 				else:
+					now = time.strftime("(%Y-%m-%d %H:%M:%S) ")
 					#print to the screen or the log file
 					if self.LOG == 'stdout':
-						print(line)
+						print(now + line)
 					else:
 						with open(self.LOG, "a") as log:
-							log.write(line)
+							log.write(now + line)
 def parseargs():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-s', '--server',default='irc.freenode.net', help='DNS address of the IRC server. default=irc.freenode.net')
