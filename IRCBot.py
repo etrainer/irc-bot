@@ -66,6 +66,9 @@ class ircbot():
 					else:
 						with open(self.LOG, "a") as log:
 							log.write(now + encode(line))
+
+#we may see different character encodings
+#do our best to handle the different types
 def decode(bytes):
 	try:
 		text = bytes.decode('utf-8')
