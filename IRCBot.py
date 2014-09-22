@@ -46,7 +46,7 @@ class ircbot():
 		#respond to any PINGs sent by the IRC server so it doesn't drop us!
 		#write to the screen or the log file
 		while True:
-			readbuffer = readbuffer + self.irc.recv(1024).decode()
+			readbuffer = readbuffer + self.irc.recv(1024).decode('utf-8')
 			#we don't need everything the server sends
 			temp = readbuffer.split("\n")
 			readbuffer = temp.pop()
@@ -59,7 +59,7 @@ class ircbot():
 				if (linex[0] == "PING"):
 					self.irc.send(bytes("PONG %s\r\n" % linex[1]))
 				else:
-					now = time.strftime("(%Y-%m-%d %H:%M:%S) ")
+					now = time.strftime("(%Y-%m-%d %H:%M:%S)")
 					#print to the screen or the log file
 					if self.LOG == 'stdout':
 						print(now + line)
@@ -70,8 +70,8 @@ def parseargs():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-s', '--server',default='irc.freenode.net', help='DNS address of the IRC server. default=irc.freenode.net')
 	parser.add_argument('-p', '--port', type=int, default=6667, help='port number of IRC server. default=6667')
-	parser.add_argument('-c', '--channel', default='#python-unregistered', help='IRC channel to join. default=#python-unregistered')
-	parser.add_argument('-n', '--name', default='irc_logger_bot', help='how the bot will be identified in the channel. default=irc_logger_bot')
+	parser.add_argument('-c', '--channel', default='#linux', help='IRC channel to join. default=#linux')
+	parser.add_argument('-n', '--name', default='Mandalorian', help='how the bot will be identified in the channel. default=Mandalorian')
 	parser.add_argument('-o', '--output', default='stdout', help='file to write log to. default=stdout')
 	return parser.parse_args()
 
