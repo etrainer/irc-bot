@@ -46,7 +46,7 @@ class ircbot():
 		#respond to any PINGs sent by the IRC server so it doesn't drop us!
 		#write to the screen or the log file
 		while True:
-			readbuffer = readbuffer + self.irc.recv(1024).decode('utf-8')
+			readbuffer = readbuffer + decode(self.irc.recv(1024))
 			#we don't need everything the server sends
 			temp = readbuffer.split("\n")
 			readbuffer = temp.pop()
@@ -62,10 +62,30 @@ class ircbot():
 					now = time.strftime("(%Y-%m-%d %H:%M:%S)")
 					#print to the screen or the log file
 					if self.LOG == 'stdout':
-						print(now + line)
+						print(now + encode(line))
 					else:
 						with open(self.LOG, "a") as log:
-							log.write(now + line)
+							log.write(now + encode(line))
+def decode(bytes):
+	try:
+		text = bytes.decode('utf-8')
+	except UnicodeDecodeError:
+		try:
+			text = bytes.decode('iso-8859-1')
+		except UnicodeDecodeError:
+			text = bytes.decode('cp1252')
+	return text
+
+def encode(bytes):
+	try:
+		text = bytes.encode('utf-8')
+	except UnicodeEncodeError:
+		try:
+			text = bytes.encode('iso-8859-1')
+		except UnicodeEncodeError:
+			text = bytes.encode('cp1252')
+	return text
+
 def parseargs():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-s', '--server',default='irc.freenode.net', help='DNS address of the IRC server. default=irc.freenode.net')
