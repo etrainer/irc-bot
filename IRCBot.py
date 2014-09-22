@@ -4,7 +4,7 @@ import sys
 import socket
 import string
 import argparse
-import datetime
+import time
 
 class ircbot():
 
@@ -39,7 +39,7 @@ class ircbot():
 		"""
 
 		#print the start time
-		start = datetime.datetime.now()
+		start = time.strftime("%d %b %Y  %H:%M %p")
 		print("Start time: %s" % start)
 		#create a variable to dump log information into
 		readbuffer = ""
@@ -70,8 +70,7 @@ class ircbot():
 							log.write(line)
 def parseargs():
 	parser = argparse.ArgumentParser()
-	parser.add_argument('-s', '--server',default='irc.freenode.net', 
-				help='DNS address of the IRC server. default=irc.freenode.net')
+	parser.add_argument('-s', '--server',default='irc.freenode.net', help='DNS address of the IRC server. default=irc.freenode.net')
 	parser.add_argument('-p', '--port', type=int, default=6667, help='port number of IRC server. default=6667')
 	parser.add_argument('-c', '--channel', default='#python-unregistered', help='IRC channel to join. default=#python-unregistered')
 	parser.add_argument('-n', '--name', default='irc_logger_bot', help='how the bot will be identified in the channel. default=irc_logger_bot')
