@@ -37,7 +37,8 @@ class ircbot():
 		"""
 			This is the main application loop
 		"""
-
+		
+		print("Logging ...\n")
 		#create a variable to dump log information into
 		readbuffer = ""
 
