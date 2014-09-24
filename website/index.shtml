@@ -22,26 +22,7 @@
 
 	<div id="left">
 		<div id="news">
-
-			<h3>news</h3>
-			<ul>
-				<li>Aug. 2014:<br/>CSCW paper accepted!</li>
-				<li>Jun. 2014:<br/>Submitted to <a href="http://cscw.acm.org/2015/index.php">CSCW</a>!</li>
-				<li>April 2014:<br/>GROUP paper accepted!</li>
-				<li>Feb. 2014:<br/>Submitted to <a href="http://www.acm.org/conferences/group/conferences/group14/">GROUP</a>!</li>
-				<li>Oct. 2013:<br/><a href="http://dx.doi.org/10.6084/m9.figshare.790754">WSSSPE paper</a> accepted!</li>
-				<li>Sept. 2013:<br/>Submitted to WSSSPE!</li>
-				<li>Aug. 2013:<br/>Writing paper for <a href="http://wssspe.researchcomputing.org.uk">WSSSPE</a></li>
-				<li>Jun. 2013:<br/>Joined ISR at CMU</li>
-			</ul>
-			<div class="line-seperator"></div>
-			<h3>travel</h3>
-			<ul>
-				<li>July 8&ndash;10 2014:<br/><a href="http://dev.sociotech.net/v2/archives/15783">CSST</a>, Columbia, MO</li>
-				<li>May 13&ndash;18 2014:<br/>UC Irvine, Irvine, CA</li>			
-				<li>Oct. 5&ndash;8 2013:<br/>IBM Research, Yorktown Heights, NY</li>
-			</ul>
-
+			<!--#include virtual="news-travel.html" -->
 		</div>
 	</div>
 	
@@ -56,10 +37,10 @@
 		</table>
 		<ul id="menu">
 			<li>Home</li>
-			<li><a href="projects.html">Research Projects</a></li>
-			<li><a href="pubs.html">Publications</a></li>
+			<li><a href="projects.shtml">Research Projects</a></li>
+			<li><a href="pubs.shtml">Publications</a></li>
 			<li><a href="etrainer-cv.pdf" class="image-link"><img src="images/pdficon_small.gif"/>&nbsp;<span>Vita</span></a></li>
-			<li><a href="personal.html">Personal</a></li>
+			<li><a href="personal.shtml">Personal</a></li>
 		</ul>
 		
 		<h2>About Erik</h2>
