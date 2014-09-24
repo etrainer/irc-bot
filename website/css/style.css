@@ -10,14 +10,14 @@ body {
 	font-size: 14px;
 }
 
-#container {
+div#container {
 	width: 800px;
 	margin: 0 auto;
 	background-color: #FFFFFF;
 
 }
 
-#left {
+div#left {
 	float: left;
 	width: 150px;
 	background-color: #FFFFFF;
@@ -25,14 +25,14 @@ body {
 
 }
 
-#center {
+div#center {
 	float: left;
 	width: 450px;
 	background-color:#FFFFFF;
 	padding: 2em 0 0 0;
 }
 
-#right {
+div#right {
 	float: right;
 	width: 150px;
 	background-color: #FFFFFF;
@@ -40,7 +40,7 @@ body {
 }
 
 
-#news li {
+div#news li {
 	font-size: 11px;
 }
 
@@ -67,11 +67,11 @@ a:link, a:visited {
 	text-decoration: underline;
 }
 
-a: link {
+a:link {
 	color: #0000FF;
 }
 
-a: visited {
+a:visited {
 	color: #800080;
 }
 
