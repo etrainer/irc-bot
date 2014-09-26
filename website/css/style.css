@@ -1,4 +1,4 @@
-html, body {
+ihtml, body {
 	margin: 0;
 	padding: 0;
 }
@@ -39,9 +39,9 @@ div#right {
 	padding: 2em 0 0 0em;
 }
 
-
 div#news li {
 	font-size: 11px;
+
 }
 
 ul#menu {

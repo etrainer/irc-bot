@@ -1,0 +1,10 @@
+#Ignore backup files from some unix editors,
+*~
+*.swp
+*.bak
+
+#Ignore all compiled python files (e.g., from running unit tests)
+*.pyc
+*.pyo
+*.py{}
+*.py-e
